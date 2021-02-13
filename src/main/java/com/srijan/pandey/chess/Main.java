@@ -28,5 +28,9 @@ public class Main {
             isMovePieceValid = ValidateInputs.validateCurrentPiece(pieceToMove);
         }
 
+        Board board = new Board();
+        board.populateBoard(blackPieces.split(","), whitePieces.split(","));
+        //@todo need to change player 1 or 2
+        board.getMoves(pieceToMove.charAt(0), true, pieceToMove.charAt(1) - 'a', pieceToMove.charAt(2) - '0');
     }
 }
