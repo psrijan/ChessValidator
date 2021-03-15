@@ -12,12 +12,13 @@ public class Rook extends Piece {
 
     public List<String> getMoves(Piece[][] boardState, int row, int col) {
         List<String> resList = new ArrayList<>();
-       for (int i = 0; i < direction.length; i++) {
-           List<String> result = new ArrayList<>();
-           getCurMoves(boardState, row, col, direction[i], result);
-           resList.addAll(result);
-       }
-       return  resList;
+        for (int i = 0; i < direction.length; i++) {
+            List<String> result = new ArrayList<>();
+            // Moves in straight lines in all axes
+            getCurMoves(boardState, row + direction[i][0], col + direction[i][1], direction[i], result);
+            resList.addAll(result);
+        }
+        return  resList;
     }
 
     @Override
@@ -25,18 +26,24 @@ public class Rook extends Piece {
         return PIECE_VAL;
     }
 
-    public void getCurMoves (Piece[][] boardState, int row, int col,int[] direction, List<String> result) {
-       Piece curPiece = boardState[row][col];
-       if (row < 0 || col < 0 || row >= boardState.length || col >= boardState[0].length)
-           return;
-       if (curPiece != null && curPiece.isBlackPiece() == isBlackPiece())
-          return;
-       if (curPiece != null && curPiece.isBlackPiece() != isBlackPiece()) {
-           result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
-           return;
-       }
-       result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
-       getCurMoves(boardState, row + direction[0], col + direction[1], direction, result);
+    /**
+     * Recursively finds possible moves along a straight line.
+     * The base case for the recursion would be when the function
+     * identifies the edge, a friend or an enemy in a particular
+     * board state.
+     */
+    public void getCurMoves (Piece[][] boardState, int row, int col, int[] direction, List<String> result) {
+        if (row < 0 || col < 0 || row >= boardState.length || col >= boardState[0].length)
+            return;
+        Piece curPiece = boardState[row][col];
+        if (curPiece != null && curPiece.isBlackPiece() == isBlackPiece())
+            return;
+        if (curPiece != null && curPiece.isBlackPiece() != isBlackPiece()) { // encountered an enemy, get user friendly move
+            result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+            return;
+        }
+        result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        getCurMoves(boardState, row + direction[0], col + direction[1], direction, result);
     }
 
 }

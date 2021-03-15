@@ -1,15 +1,11 @@
 package com.srijan.pandey.chess.core;
 
-import com.srijan.pandey.chess.core.Board;
 import com.srijan.pandey.chess.exception.InvalidPieceException;
-import com.srijan.pandey.chess.util.BoardUtil;
-
 import java.util.List;
-import java.util.function.BinaryOperator;
 
 public class ValidationEngineMain {
 
-    private Board board;
+    private final Board board;
 
     public ValidationEngineMain() {
         board = new Board();

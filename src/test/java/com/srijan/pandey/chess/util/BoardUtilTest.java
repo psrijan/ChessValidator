@@ -1,8 +1,5 @@
 package com.srijan.pandey.chess.util;
 
-import com.srijan.pandey.chess.core.Board;
-import com.srijan.pandey.chess.pieces.Piece;
-import com.srijan.pandey.chess.testset.CreateBoard;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.*;
@@ -40,11 +37,6 @@ class BoardUtilTest {
 
         col = BoardUtil.getGridColumn('c');
         assertThat(col, is(equalTo(2)));
-    }
-
-    @Test
-    void testVisualizeBoard() {
-        Piece[][] board = CreateBoard.getQueenAt_1a();
     }
 
 }

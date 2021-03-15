@@ -29,18 +29,12 @@ public class Queen extends Piece {
             return;
         Piece curPiece = boardState[row][col];
         if (curPiece == null) {
-            System.out.printf("null adding at %s \n" , BoardUtil.getUserFriendlyMove('T', row , col));
             result.add(BoardUtil.getUserFriendlyMove(this.getPieceVal(), row , col));
             getCurMove(boardState, row + direction[0], col + direction[1], direction, result);
         } else if (curPiece.isBlackPiece() == this.isBlackPiece())
             return;
         else if (curPiece.isBlackPiece() != this.isBlackPiece()) {
-            System.out.println("Cur Piece : " + BoardUtil.getUserFriendlyMove(curPiece.getPieceVal(), row, col));
-            System.out.println("adding 2");
             result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
         }
     }
-
-
-
 }

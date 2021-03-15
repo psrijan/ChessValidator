@@ -7,6 +7,9 @@ import com.srijan.pandey.chess.pieces.Piece;
  */
 public class BoardUtil {
 
+    private BoardUtil() {
+    }
+
     // Return the user expected move String for any piece
     public static String getUserFriendlyMove(char piece, int row, int col) {
         String rowStr = String.valueOf(row + 1);
@@ -28,8 +31,6 @@ public class BoardUtil {
     /**
      * Takes the user defined column value and return the
      * actual position of the
-     * @param col
-     * @return
      */
     public static int getGridColumn(char col) {
        return col - 'a'; // column is specified as a-f and the 0th position in grid will be a value

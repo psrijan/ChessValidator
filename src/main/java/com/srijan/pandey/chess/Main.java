@@ -1,7 +1,6 @@
 package com.srijan.pandey.chess;
 
 import com.srijan.pandey.chess.core.ValidationEngineMain;
-import com.srijan.pandey.chess.exception.InvalidPieceException;
 import com.srijan.pandey.chess.util.UserInputUtils;
 
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.srijan.pandey.chess.pieces;
 
-import com.srijan.pandey.chess.core.Board;
 import com.srijan.pandey.chess.util.BoardUtil;
 
 import java.util.ArrayList;
@@ -10,13 +9,11 @@ import java.util.List;
 public class Bishop extends Piece {
     int[][] direction = {{1,1}, {-1, -1}, {1,-1}, {-1,1}};
     private static final Character PIECE_VAL = 'B';
+
+
     /**
      * Takes in a possible direction array and recurses over all possible moves in the board
      * by way of utilizing the directionalArray values.
-     * @param boardState
-     * @param row
-     * @param col
-     * @return
      */
     public List<String> getMoves(Piece[][] boardState, int row, int col) {
         List<String> finalRes = new ArrayList<>();

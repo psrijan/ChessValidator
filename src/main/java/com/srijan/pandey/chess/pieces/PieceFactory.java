@@ -4,12 +4,11 @@ import com.srijan.pandey.chess.exception.PieceNotFoundException;
 
 public class PieceFactory {
 
+    private PieceFactory() {
+    }
+
     /**
      * Get piece Class based on piece character and type of piece information
-     * @param piece
-     * @param isBlackPiece
-     * @return
-     * @throws PieceNotFoundException
      */
     public static Piece getPiece(char piece, boolean isBlackPiece) throws PieceNotFoundException {
         Piece p = null;

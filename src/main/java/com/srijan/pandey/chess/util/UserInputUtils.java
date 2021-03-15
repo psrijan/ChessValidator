@@ -42,21 +42,21 @@ public class UserInputUtils {
             System.out.println("Please enter valid black pieces FORMAT: (<piece><column><row>,)");
             System.out.println("Eg: Kb8,Ne8,Pa7,Pb7,Pc7,Ra5");
             blackPieces = sc.nextLine();
-            isBlackPieceValid = ValidateInputs.validatePieces(blackPieces); // Strict validity check for the Black Piece String
+            isBlackPieceValid = ValidateInputUtil.validatePieces(blackPieces); // Strict validity check for the Black Piece String
         }
 
         while (!isWhitePieceValid) {
             System.out.println("Please enter valid white pieces FORMAT: (<piece><column><row>,)");
             System.out.println("Eg: Rf1,Kg1,Pf2,Ph2,Pg3");
             whitePieces = sc.nextLine();
-            isWhitePieceValid = ValidateInputs.validatePieces(whitePieces); // Strict validity Check for the White Piece String
+            isWhitePieceValid = ValidateInputUtil.validatePieces(whitePieces); // Strict validity Check for the White Piece String
         }
 
         while (!isMovePieceValid) {
             System.out.println("Please enter a single valid Piece for which you want a move list FORMAT:(<piece><column><row>)");
             System.out.println("Eg: Kb8");
             pieceToMove = sc.nextLine();
-            isMovePieceValid = ValidateInputs.validateCurrentPiece(pieceToMove.trim());
+            isMovePieceValid = ValidateInputUtil.validateCurrentPiece(pieceToMove.trim());
         }
         result.add(blackPieces);
         result.add(whitePieces);

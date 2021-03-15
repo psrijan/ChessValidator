@@ -9,6 +9,9 @@ import java.util.List;
  * Pawn class.
  * IMPORTANT NOTE: Since the pawns are directional movers, the black pieces will start from row 8 and 7
  * and the white pieces will start from row 0 and 1.
+ *
+ * IMPORTANT NOTE: Pawn in this chess validation engine will not be able to do the initial two square advance at the start of
+ * the chess match
  */
 public class Pawn extends Piece {
 
@@ -37,32 +40,41 @@ public class Pawn extends Piece {
         * by having start index start from either 0 or 2
         */
         int[] curSpecDir = specialDirection[(isBlackPiece() ? 0 : 1) * 2];
-
+        Piece p1;
 
         // Add the move if the normal moved index doesn't have any white or black players.
         int r1 = row + curDir[0];
         int c1 = row + curDir[1];
-        Piece p1 = boardState[r1][c1];
-        if (p1 == null)
-           result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        if (isValidIndex(r1,c1)) {
+            p1 = boardState[r1][c1];
+            if (p1 == null)
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        }
 
         // Add the move for special direction if there if board
         r1 = row + curSpecDir[0];
         c1 = col + curSpecDir[1];
-        p1 = boardState[r1][c1];
-
-        // check if not null and p1 is different piece than the current piece
-        if (p1 != null && p1.isBlackPiece() != isBlackPiece())
-            result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        if (isValidIndex(r1,c1)) {
+            p1 = boardState[r1][c1];
+            // check if not null and p1 is different piece than the current piece
+            if (p1 != null && p1.isBlackPiece() != isBlackPiece())
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        }
 
         // Repeat the same process for the second special directional move
         r1 = row + specialDirection[(isBlackPiece() ? 0 : 1) * 2 + 1][0];
         c1 = col + specialDirection[(isBlackPiece()? 0 : 1) * 2 + 1][1];
+        if(isValidIndex(r1, c1)) {
+            p1 = boardState[r1][c1];
+            if (p1 != null && p1.isBlackPiece() != isBlackPiece())
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+        }
 
-        p1 = boardState[r1][c1];
-        if (p1 != null && p1.isBlackPiece() != isBlackPiece())
-           result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
         return result;
+    }
+
+    private boolean isValidIndex(int row, int col) {
+        return (row >= 0 && row < 8) && (col >= 0 && col < 8);
     }
 
     @Override
