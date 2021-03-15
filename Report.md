@@ -20,6 +20,8 @@ For this project, I used two static code analysis tool.
 
 [Unused Import](./results/unused_import.png)
 
+[Static Analysis](./results/unused_import1.png) 
+
 **Unused Import**
 
 [Unused Variable](./results/unused_variable.png)
