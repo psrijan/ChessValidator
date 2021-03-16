@@ -54,11 +54,8 @@ public class Board {
     public List<String> getMoves(char userPiece, char userRow, char userCol) throws InvalidPieceException {
         int row = BoardUtil.getGridRow(userRow);
         int col = BoardUtil.getGridColumn(userCol);
-        System.out.println("User Row: " + userRow + " Row: " + row);
-        System.out.println("User Col: " + userCol + " Col: " + col);
         Piece piece = chessBoard[row][col];
 
-        System.out.println("User Piece: " + userPiece);
         if (piece == null || userPiece != piece.getPieceVal()) {
             throw new InvalidPieceException("The board doesn't have the piece specified in the particular row and column");
         }

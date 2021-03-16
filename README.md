@@ -18,6 +18,15 @@ Go to Intellij and run the tests individually
 
 ![](./results/running_test.png)
 
+
+## Running the Source Code: 
+
+    > mvn clean install
+    > java -jar ./target/ChessValidator-1.0-SNAPSHOT.jar
+
+or 
+
+Go to Intellij or any IDE and run the `Main.java` class.
 ## Report: Static Code Analysis Tool:
 For this project, I used two static code analysis tool. 
 1. Intellij Native Code Analysis
