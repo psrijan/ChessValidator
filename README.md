@@ -190,4 +190,5 @@ Another Example of case not shown:
 
 3. Better testsets could have been written. My testing efforts were longer due to the mere fact that my `CreateBoardUtil.java` class didn't return the output results. I made a lot of mistakes while writing the testcases because of this.
 
+## Future Work
 Extend this project using JavaFx/Swing to graphically visualize all the possible moves of the chess board.
