@@ -18,19 +18,19 @@ import static org.hamcrest.Matchers.hasSize;
 class PawnTest {
 
     @Test
-    void testPawnAt_1a() throws PieceNotFoundException {
+    void testPawnAt_2a() throws PieceNotFoundException {
         Piece pawn = PieceFactory.getPiece('P', false);
         Piece[][] boardState = CreateBoardUtil.getPawnAt_2a();
-        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('a'));
+        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('2'), BoardUtil.getGridColumn('a'));
         assertThat(moves, hasSize(1));
         assertThat(moves, hasItems("Pa3"));
     }
 
     @Test
-    void testPawnAt_1h() throws PieceNotFoundException {
+    void testPawnAt_3g() throws PieceNotFoundException {
         Piece pawn = PieceFactory.getPiece('P', false);
         Piece[][] boardState = CreateBoardUtil.getPawnAt_2h_withEnemyAt_3g();
-        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('h'));
+        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('2'), BoardUtil.getGridColumn('h'));
         assertThat(moves, hasItems("Ph3", "Pg3"));
     }
 
@@ -63,7 +63,7 @@ class PawnTest {
     void testPawnSurroundedByEnemyInTwoSideOneInPawnsVision() throws PieceNotFoundException {
         Piece pawn = PieceFactory.getPiece('P', true);
         Piece[][] boardState = CreateBoardUtil.getPawnFrontOfEmenyInTwoSide();
-        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('h'));
+        List<String> moves = pawn.getMoves(boardState, BoardUtil.getGridRow('3'), BoardUtil.getGridColumn('c'));
         assertThat(moves, hasItems( "Pd2"));
     }
 }

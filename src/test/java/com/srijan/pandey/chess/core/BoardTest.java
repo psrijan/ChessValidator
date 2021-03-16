@@ -3,10 +3,13 @@ package com.srijan.pandey.chess.core;
 import com.srijan.pandey.chess.exception.InvalidPieceException;
 import com.srijan.pandey.chess.exception.PieceNotFoundException;
 import com.srijan.pandey.chess.pieces.Piece;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.*;
@@ -18,6 +21,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTest {
 
     @InjectMocks private Board board;
+
+    @BeforeClass
+    void init() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     void testGetBoard() {

@@ -1,0 +1,15 @@
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/AbstractPieceTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/testset/CreateBoardUtil.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/QueenTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/util/BoardUtilTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/core/ValidationEngineMainTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/KnightTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/core/BoardTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/util/UserInputUtilsTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/PieceFactoryTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/RookTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/BishopTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/util/ValidateInputsTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/KingTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/pieces/PawnTest.java
+/home/srijan/Documents/code/java/ChessValidator/src/test/java/com/srijan/pandey/chess/matchers/PieceEqls.java

@@ -44,11 +44,11 @@ public class Pawn extends Piece {
 
         // Add the move if the normal moved index doesn't have any white or black players.
         int r1 = row + curDir[0];
-        int c1 = row + curDir[1];
+        int c1 = col + curDir[1];
         if (isValidIndex(r1,c1)) {
             p1 = boardState[r1][c1];
             if (p1 == null)
-                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), r1, c1));
         }
 
         // Add the move for special direction if there if board
@@ -58,7 +58,7 @@ public class Pawn extends Piece {
             p1 = boardState[r1][c1];
             // check if not null and p1 is different piece than the current piece
             if (p1 != null && p1.isBlackPiece() != isBlackPiece())
-                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), r1, c1));
         }
 
         // Repeat the same process for the second special directional move
@@ -67,7 +67,7 @@ public class Pawn extends Piece {
         if(isValidIndex(r1, c1)) {
             p1 = boardState[r1][c1];
             if (p1 != null && p1.isBlackPiece() != isBlackPiece())
-                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), row, col));
+                result.add(BoardUtil.getUserFriendlyMove(getPieceVal(), r1, c1));
         }
 
         return result;

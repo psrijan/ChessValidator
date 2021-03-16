@@ -7,8 +7,8 @@ public class ValidationEngineMain {
 
     private final Board board;
 
-    public ValidationEngineMain() {
-        board = new Board();
+    public ValidationEngineMain(Board board) {
+         this.board = board;
     }
     /**
      * The main function to get the possible set of moves for a particular list of black and white pieces

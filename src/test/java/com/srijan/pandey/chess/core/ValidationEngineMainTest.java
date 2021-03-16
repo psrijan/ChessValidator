@@ -1,11 +1,13 @@
 package com.srijan.pandey.chess.core;
 
 import com.srijan.pandey.chess.exception.InvalidPieceException;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -43,6 +45,11 @@ class ValidationEngineMainTest {
 
     @InjectMocks ValidationEngineMain validationEngineMain;
 
+
+    @Before
+    void init() {
+        MockitoAnnotations.openMocks(this);
+    }
     /**
      * For this test case the idea is to mock and get a desired result for isValid = false
      * so that we can test the invalid piece part.

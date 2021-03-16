@@ -18,7 +18,6 @@ class QueenTest extends AbstractPieceTest{
         Piece[][] boardState = CreateBoardUtil.getQueenAt_1a();
         queen.setBlackPiece(true);
         List<String> moves = queen.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('a'));
-        printMoves(moves);
         assertThat(moves, hasItems("Qa2", "Qa3", "Qa4", "Qa5", "Qa6", "Qa7", "Qa8", "Qb1", "Qc1", "Qd1",
                 "Qe1", "Qf1", "Qg1", "Qh1", "Qb2", "Qc3", "Qd4", "Qe5", "Qf6", "Qg7", "Qh8"));
     }
@@ -59,7 +58,6 @@ class QueenTest extends AbstractPieceTest{
         Piece[][] boardState = CreateBoardUtil.getQueenFrontOfEnemyInOneSide();
         queen.setBlackPiece(true);
         List<String> moves = queen.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('h'));
-        printMoves(moves);
         assertThat(moves, hasItems("Qh2"));
 
     }
@@ -70,7 +68,6 @@ class QueenTest extends AbstractPieceTest{
         Piece[][] boardState = CreateBoardUtil.getQueenFrontOfEmenyInTwoSide();
         queen.setBlackPiece(true);
         List<String> moves = queen.getMoves(boardState, BoardUtil.getGridRow('1'), BoardUtil.getGridColumn('h'));
-        printMoves(moves);
         assertThat(moves, hasItems("Qh2","Qh4"));
 
     }

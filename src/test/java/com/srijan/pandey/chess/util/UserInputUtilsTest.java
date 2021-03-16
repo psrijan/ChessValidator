@@ -1,12 +1,14 @@
 package com.srijan.pandey.chess.util;
 
 import org.hamcrest.Matchers;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.engine.support.discovery.SelectorResolver;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.hamcrest.MatcherAssert.*;
@@ -23,6 +25,10 @@ class UserInputUtilsTest {
     @Mock Scanner scanner; // Mocks the scanner class
     @InjectMocks UserInputUtils userInputUtils; // Injects the scanner class inside of the UserInputUtils class
 
+    @BeforeClass
+    void init() {
+        MockitoAnnotations.openMocks(this);
+    }
     /**
      * The use of mockito requires that you mock and inject the variables inside the class you are trying to test
      * Future Reference: With mockito, there are challenges when mocking static class. You need an additional lib
