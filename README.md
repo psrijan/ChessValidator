@@ -1,6 +1,6 @@
 
 # Chess Validation
-### Understanding Software Verification and Validation Proces:
+### Understanding Software Verification and Validation Process:
 
 This is a project that validates chess ruleset. This project attempts to understand software testing and validation process to build dependable software system. The scope of the project is to understand the use of **test cases** and **static analysis tools** such as Sonarcube/Intellij Analyzers to identify bugs in a program. 
 
